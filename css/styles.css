@@ -1,0 +1,396 @@
+:root {
+  --color-primary: #6f233f;
+  --color-alt: #9ab194;
+  --color-secondary: #13161f;
+  --color-accent: #e0b358;
+  --color-font: #ebe7db;
+}
+
+.container {
+  max-width: 1140px;
+}
+
+/*Typography*/
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  font-size: 2rem;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 7rem;
+}
+h2 {
+  font-size: 5rem;
+}
+h3 {
+  font-size: 3rem;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 1.8rem;
+  }
+
+  h1 {
+    font-size: 8rem;
+  }
+
+  h2 {
+    font-size: 6rem;
+  }
+
+  h3 {
+    font-size: 4rem;
+  }
+}
+
+/*Images*/
+
+.image {
+  width: 100%;
+}
+.tap__logo {
+  height: 80px;
+}
+
+.tap__logo:hover {
+  transform: rotate(35deg);
+  transition: transform 0.3s;
+  transform-origin: bottom;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 40px;
+  border: 0;
+  cursor: pointer;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  padding: 2rem 3rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: var(--color-accent);
+}
+
+.btn--primary:hover {
+  background: #6e1938;
+}
+
+.btn--secondary {
+  background: var(--color-alt);
+  color: var(--color-secondary);
+}
+
+.btn--secondary:hover {
+  background: #a6c39f;
+}
+
+.btn--block {
+  width: 100%;
+  display: inline-block;
+}
+
+@media screen and (min-width: 1024px) {
+  .btn {
+    font-size: 1.5rem;
+  }
+}
+
+/*Icons*/
+.icon {
+  width: 50px;
+  height: 50px;
+}
+
+.icon--accent {
+  fill: var(--color-accent);
+}
+
+.icon--black {
+  fill: black;
+}
+
+.icon--large {
+  width: 70px;
+  height: 70px;
+}
+
+.icon--small {
+  width: 30px;
+  height: 30px;
+}
+
+.icon-container {
+  background: var(--color-primary);
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-container--small {
+  width: 40px;
+  height: 40px;
+}
+
+/* Grids */
+.grid {
+  display: grid;
+}
+
+@media screen and (min-width: 768px) {
+  .grid--1x2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .grid--1x3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/*List*/
+.list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list--tap::before {
+  content: "";
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  background-image: url(../images/tap-handle.png);
+  padding-left: 3rem;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  margin: 1rem 1rem;
+}
+
+/*Collapsibles */
+.collapsible__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.collapsible__heading {
+  margin-top: 0;
+  font-size: 3rem;
+}
+
+.collapsible__chevron {
+  transform: rotate(0deg);
+  transition: transform 0.3s;
+}
+
+.collapsible__content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.collapsible--expanded .collapsible__chevron {
+  transform: rotate(90deg);
+}
+
+.collapsible--expanded .collapsible__content {
+  max-height: 100vh;
+  opacity: 1;
+}
+
+/* Blocks */
+.block {
+  padding: 4.5rem 2rem;
+}
+
+.block__heading {
+  margin-top: 0;
+}
+
+.block--dark {
+  background: var(--color-secondary);
+}
+
+.block__header {
+  text-align: center;
+}
+
+.block--dark .block__heading {
+  color: var(--color-alt);
+}
+
+/*Navigation Bar*/
+.nav {
+  background: var(--color-secondary);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+  align-items: center;
+  border-bottom: 2px solid var(--color-font);
+  position: fixed;
+  width: 100%;
+}
+
+.nav__list {
+  width: 100%;
+  margin: 0;
+}
+
+.nav__logo {
+  width: 100px;
+}
+
+.nav__item {
+  padding: 0.5rem 2rem;
+  border-bottom: 1px solid rgb(53, 53, 53);
+}
+
+.nav__item > a {
+  color: var(--color-accent);
+  transition: 0.5s;
+}
+
+.nav__item > a:hover {
+  color: #ffe02e;
+}
+
+.nav__toggle {
+  opacity: 70%;
+  cursor: pointer;
+}
+
+.nav.collapsible--expanded .nav__toggle {
+  opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .nav__toggle {
+    display: none;
+  }
+
+  .nav__list {
+    width: auto;
+    display: flex;
+    max-height: 100%;
+    opacity: 1;
+  }
+
+  .nav__item {
+    border: 0;
+  }
+}
+
+/* Hero */
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rem;
+}
+.hero__tagline {
+  font-size: 2rem;
+  color: var(--color-font);
+  letter-spacing: 1px;
+  margin: 2rem 0 5rem;
+}
+
+.hero__image {
+  margin-top: 10rem;
+}
+
+.hero__button__container {
+  display: flex;
+  justify-content: center;
+}
+
+.hero__button {
+  margin-bottom: 5rem;
+}
+
+.hero__icons__list {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 2rem;
+}
+
+.hero__tap__logo {
+  margin: 0 0;
+}
+
+/* Cards */
+
+.card {
+  border-radius: 7px;
+  box-shadow: 0 0 20px 10px #f3f3f3;
+  overflow: hidden;
+}
+
+.card__header,
+card__body {
+  padding: 2rem 3rem 0 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__logo {
+  margin: 0 0;
+}
+.card--primary .card__header {
+  background: var(--color-primary);
+  color: var(--color-accent);
+}
+
+.card--secondary .card__header {
+  background: var(--color-secondary);
+  color: var(--color-alt);
+}
+
+/* Sport */
+
+.content--right {
+  padding-left: 2rem;
+}
+
+.content--left {
+  padding-right: 2rem;
+}
+.sport__name {
+  color: var(--color-alt);
+  text-align: center;
+  margin: 0 0;
+}
+
+.sport__list__item {
+  padding-left: 3rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.sport__list__content {
+  padding-left: 2rem;
+}
